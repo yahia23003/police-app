@@ -6,44 +6,88 @@
     <title>تقديم شرطة عرب هاوس</title>
     <style>
         body {
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background: url('https://source.unsplash.com/1600x900/?police') no-repeat center center/cover;
             font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            text-align: center;
+            color: #000;
         }
         .container {
-            background: rgba(0, 0, 0, 0.7);
+            width: 50%;
+            margin: auto;
+            background: white;
             padding: 20px;
             border-radius: 10px;
-            text-align: center;
-            color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        h1 {
-            margin-bottom: 20px;
+        h2 {
+            color: #0044cc;
         }
-        .btn {
-            background: #5865F2;
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #0044cc;
+            border-radius: 5px;
+        }
+        button {
+            background: #0044cc;
             color: white;
             padding: 10px 20px;
-            text-decoration: none;
-            font-size: 18px;
+            border: none;
             border-radius: 5px;
-            display: inline-block;
-            transition: 0.3s;
+            cursor: pointer;
         }
-        .btn:hover {
-            background: #4752c4;
+        button:hover {
+            background: #002a80;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>مرحباً بك في موقع تقديم شرطة عرب هاوس</h1>
-        <a class="btn" href="https://discord.com/oauth2/authorize?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=identify">تسجيل الدخول عبر ديسكورد</a>
+        <h2>طلب الانضمام إلى شرطة عرب هاوس</h2>
+        <form action="#" method="POST">
+            <label>الاسم الثلاثي:</label>
+            <input type="text" required>
+
+            <label>العمر:</label>
+            <input type="number" required>
+
+            <label>يوزرك داخل اللعبة:</label>
+            <input type="text" required>
+
+            <label>هل لديك أي مخالفات سابقة؟:</label>
+            <select>
+                <option>نعم</option>
+                <option>لا</option>
+            </select>
+
+            <label>سبب رغبتك في الانضمام إلى الشرطة:</label>
+            <textarea required></textarea>
+
+            <label>مستوى خبرتك في العمل الأمني:</label>
+            <select>
+                <option>مبتدئ</option>
+                <option>متوسط</option>
+                <option>خبير</option>
+            </select>
+
+            <label>هل لديك معرفة بالقوانين العسكرية؟</label>
+            <select>
+                <option>نعم</option>
+                <option>لا</option>
+            </select>
+
+            <label>هل تستطيع الالتزام بالحضور والتدريبات؟</label>
+            <select>
+                <option>نعم</option>
+                <option>لا</option>
+            </select>
+
+            <label>يوزر ديسكورد:</label>
+            <input type="text" required>
+
+            <button type="submit">إرسال الطلب</button>
+        </form>
     </div>
 </body>
 </html>
