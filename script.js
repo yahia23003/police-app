@@ -1,4 +1,4 @@
-const CLIENT_ID = "YOUR_CLIENT_ID";
+const CLIENT_ID = "1107759692622610444";
 const REDIRECT_URI = "YOUR_REDIRECT_URI";
 
 function loginWithDiscord() {
