@@ -3,10 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>شرطة عرب هاوس</title>
+    <title>تقديم شرطة عرب هاوس</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>مرحبًا بك في موقع تقديم طلبات الشرطة!</h1>
+    <div class="container">
+        <h1>مرحبًا بك في موقع تقديم شرطة عرب هاوس</h1>
+        <button onclick="loginWithDiscord()">تسجيل الدخول عبر ديسكورد</button>
+        
+        <div id="applicationForm" style="display: none;">
+            <h2>نموذج التقديم</h2>
+            <form id="applyForm">
+                <input type="text" id="name" placeholder="اسمك داخل اللعبة" required>
+                <input type="text" id="age" placeholder="عمرك" required>
+                <textarea id="reason" placeholder="لماذا تريد الانضمام؟" required></textarea>
+                <button type="submit">إرسال التقديم</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
-
