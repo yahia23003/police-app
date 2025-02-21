@@ -7,32 +7,33 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
+    <div class="container">
         <h1>شرطة عرب هاوس - تقديم الطلبات</h1>
-    </header>
+        
+        <button id="login-btn">🔹 تسجيل الدخول عبر ديسكورد</button>
 
-    <section>
-        <button id="login-btn">تسجيل الدخول عبر ديسكورد</button>
-    </section>
-
-    <section>
-        <h2>نموذج التقديم</h2>
         <form id="apply-form">
-            <input type="text" id="full-name" placeholder="الاسم الثلاثي" required><br>
-            <input type="number" id="age" placeholder="العمر" required><br>
-            <input type="text" id="game-user" placeholder="يوزر داخل اللعبة" required><br>
-            <input type="text" id="violations" placeholder="هل لديك أي مخالفات سابقة؟" required><br>
-            <textarea id="reason" placeholder="سبب رغبتك في الانضمام إلى الشرطة" required></textarea><br>
-            <button type="submit">إرسال الطلب</button>
-        </form>
-    </section>
+            <label>الاسم الثلاثي:</label>
+            <input type="text" id="full-name" required>
 
-    <section>
-        <h2>إحصائيات الطلبات</h2>
-        <p>إجمالي الطلبات: <span id="total-requests">0</span></p>
-        <p>الطلبات المقبولة: <span id="accepted-requests">0</span></p>
-        <p>الطلبات المرفوضة: <span id="rejected-requests">0</span></p>
-    </section>
+            <label>العمر:</label>
+            <input type="number" id="age" required>
+
+            <label>اسمك داخل اللعبة:</label>
+            <input type="text" id="game-user" required>
+
+            <label>هل لديك أي مخالفات سابقة؟</label>
+            <select id="violations">
+                <option value="لا">لا</option>
+                <option value="نعم">نعم</option>
+            </select>
+
+            <label>لماذا ترغب في الانضمام للشرطة؟</label>
+            <textarea id="reason" required></textarea>
+
+            <button type="submit">✔ إرسال الطلب</button>
+        </form>
+    </div>
 
     <script src="script.js"></script>
 </body>
