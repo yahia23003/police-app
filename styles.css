@@ -1,79 +1,35 @@
+/* ملف CSS - تصميم جذاب */
 body {
-    font-family: 'Tajawal', sans-serif;
-    background: linear-gradient(135deg, #002244, #0055ff);
-    color: white;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
     text-align: center;
-    margin: 0;
-    padding: 0;
+    color: #333;
 }
 
 header {
-    background: rgba(0, 0, 0, 0.2);
+    background: #003366;
+    color: white;
     padding: 20px;
-    font-size: 24px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 button {
-    background: #0084ff;
+    background: #0055aa;
     color: white;
     border: none;
-    padding: 12px 25px;
-    font-size: 18px;
+    padding: 10px 20px;
     cursor: pointer;
-    margin-top: 20px;
-    border-radius: 30px;
-    transition: 0.3s ease-in-out;
+    border-radius: 5px;
 }
 
 button:hover {
-    background: #005bb5;
-    transform: scale(1.05);
+    background: #004488;
 }
 
-main {
-    margin-top: 30px;
-}
-
-form {
-    background: rgba(255, 255, 255, 0.1);
+section {
+    background: white;
     padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-    display: inline-block;
-    text-align: right;
+    margin: 20px auto;
     width: 50%;
-}
-
-label {
-    display: block;
-    margin-top: 15px;
-}
-
-input, select, textarea {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-}
-
-textarea {
-    height: 80px;
-}
-
-.submit-btn {
-    background: #ffcc00;
-    color: #002244;
-    font-weight: bold;
-    margin-top: 20px;
-}
-
-.submit-btn:hover {
-    background: #ffaa00;
-}
-
-.hidden {
-    display: none;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
