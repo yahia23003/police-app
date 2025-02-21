@@ -3,97 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تقديم شرطة عرب هاوس</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #2e004f;
-            text-align: center;
-            color: #000;
-        }
-        .container {
-            width: 50%;
-            margin: auto;
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            opacity: 0.9;
-        }
-        h1 {
-            color: #0044cc;
-        }
-        h2 {
-            color: #0044cc;
-        }
-        input, select, textarea {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #0044cc;
-            border-radius: 5px;
-        }
-        button {
-            background: #0044cc;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        button:hover {
-            background: #002a80;
-        }
-    </style>
+    <title>التقديم لشرطة عرب هاوس</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>شرطة عرب هاوس</h1>
-        <p>نحن فريق متخصص في حفظ الأمن والنظام داخل سيرفر عرب هاوس، نعمل على ضمان سلامة اللاعبين وتطبيق القوانين بصرامة وعدالة.</p>
-        <h2>طلب الانضمام إلى شرطة عرب هاوس</h2>
-        <form action="#" method="POST">
-            <label>الاسم الثلاثي:</label>
-            <input type="text" required>
-
-            <label>العمر:</label>
-            <input type="number" required>
-
-            <label>يوزرك داخل اللعبة:</label>
-            <input type="text" required>
-
-            <label>هل لديك أي مخالفات سابقة؟:</label>
-            <select>
-                <option>نعم</option>
-                <option>لا</option>
+    <header>
+        <h1>التقديم لشرطة عرب هاوس</h1>
+        <button id="discord-login">تسجيل الدخول عبر ديسكورد</button>
+    </header>
+    
+    <section>
+        <h2>نموذج التقديم</h2>
+        <form id="application-form">
+            <label for="full-name">الاسم الثلاثي:</label>
+            <input type="text" id="full-name" required>
+            
+            <label for="age">العمر:</label>
+            <input type="number" id="age" required>
+            
+            <label for="game-user">يوزر داخل اللعبة:</label>
+            <input type="text" id="game-user" required>
+            
+            <label for="violations">هل لديك مخالفات سابقة؟</label>
+            <select id="violations">
+                <option value="no">لا</option>
+                <option value="yes">نعم</option>
             </select>
-
-            <label>سبب رغبتك في الانضمام إلى الشرطة:</label>
-            <textarea required></textarea>
-
-            <label>مستوى خبرتك في العمل الأمني:</label>
-            <select>
-                <option>مبتدئ</option>
-                <option>متوسط</option>
-                <option>خبير</option>
+            
+            <label for="reason">سبب رغبتك في الانضمام:</label>
+            <textarea id="reason" required></textarea>
+            
+            <label for="experience">مستوى الخبرة:</label>
+            <select id="experience">
+                <option value="beginner">مبتدئ</option>
+                <option value="intermediate">متوسط</option>
+                <option value="expert">خبير</option>
             </select>
-
-            <label>هل لديك معرفة بالقوانين العسكرية؟</label>
-            <select>
-                <option>نعم</option>
-                <option>لا</option>
+            
+            <label for="military-laws">هل لديك معرفة بالقوانين العسكرية؟</label>
+            <select id="military-laws">
+                <option value="yes">نعم</option>
+                <option value="no">لا</option>
             </select>
-
-            <label>هل تستطيع الالتزام بالحضور والتدريبات؟</label>
-            <select>
-                <option>نعم</option>
-                <option>لا</option>
+            
+            <label for="commitment">هل تستطيع الالتزام بالحضور والتدريبات؟</label>
+            <select id="commitment">
+                <option value="yes">نعم</option>
+                <option value="no">لا</option>
             </select>
-
-            <label>يوزر ديسكورد:</label>
-            <input type="text" required>
-
+            
+            <label for="discord-user">يوزر ديسكورد:</label>
+            <input type="text" id="discord-user" required>
+            
             <button type="submit">إرسال الطلب</button>
         </form>
-    </div>
+    </section>
+    
+    <script src="script.js"></script>
 </body>
 </html>
