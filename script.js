@@ -1,33 +1,58 @@
-document.getElementById("login-btn").addEventListener("click", () => {
-    const CLIENT_ID = "YOUR_CLIENT_ID";  // ضع Client ID هنا
-    const REDIRECT_URI = "https://your-site.com/callback"; // ضع رابط إعادة التوجيه الفعلي
-    const DISCORD_AUTH_URL = `https://discord.com/oauth2/authorize?client_id=${CLIENT_ID}&redirect_uri=${encodeURIComponent(REDIRECT_URI)}&response_type=token&scope=identify`;
+const CLIENT_ID = "معرف تطبيق ديسكورد هنا";
+const REDIRECT_URI = "https://yahia23003.github.io/police-app/";
+const API_URL = "https://discord.com/api";
+let accessToken = null;
 
-    window.location.href = DISCORD_AUTH_URL;
+// تسجيل الدخول عبر ديسكورد
+document.getElementById("login-discord").addEventListener("click", () => {
+    window.location.href = `https://discord.com/oauth2/authorize?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=token&scope=identify`;
 });
 
-document.getElementById("apply-form").addEventListener("submit", (e) => {
+// استخراج التوكن من URL بعد تسجيل الدخول
+window.onload = () => {
+    const hash = window.location.hash.substring(1);
+    const params = new URLSearchParams(hash);
+    accessToken = params.get("access_token");
+
+    if (accessToken) {
+        fetch(`${API_URL}/users/@me`, {
+            headers: { Authorization: `Bearer ${accessToken}` }
+        })
+        .then(response => response.json())
+        .then(user => {
+            document.getElementById("login-discord").innerText = `مرحبًا، ${user.username}`;
+        })
+        .catch(console.error);
+    }
+};
+
+// إرسال الطلب إلى ديسكورد
+document.getElementById("application-form").addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    const application = {
-        fullName: document.getElementById("full-name").value,
-        age: document.getElementById("age").value,
-        gameUser: document.getElementById("game-user").value,
-        violations: document.getElementById("violations").value,
-        reason: document.getElementById("reason").value,
-    };
+    if (!accessToken) {
+        alert("يجب تسجيل الدخول عبر ديسكورد أولًا!");
+        return;
+    }
 
-    fetch("https://YOUR_API_ENDPOINT/submit", {
+    const fullName = document.getElementById("full-name").value;
+    const age = document.getElementById("age").value;
+    const gameUsername = document.getElementById("game-username").value;
+    const violations = document.getElementById("violations").value;
+    const reason = document.getElementById("reason").value;
+
+    const message = `📢 **طلب انضمام جديد:**\n👤 الاسم: ${fullName}\n🎮 المستخدم داخل اللعبة: ${gameUsername}\n🔢 العمر: ${age}\n⚠️ مخالفات سابقة: ${violations}\n📌 سبب التقديم: ${reason}`;
+
+    fetch("https://discord.com/api/webhooks/معرف_الويب_هوك/التوكن", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(application),
+        body: JSON.stringify({ content: message })
     })
-    .then(response => response.json())
-    .then(data => {
-        alert("✅ تم إرسال طلبك بنجاح!");
+    .then(() => {
+        document.getElementById("status-message").innerText = "✔️ تم إرسال طلبك بنجاح!";
     })
-    .catch(error => {
-        console.error("❌ خطأ في إرسال الطلب:", error);
-        alert("❌ حدث خطأ أثناء إرسال الطلب.");
+    .catch(error => console.error("حدث خطأ", error));
+});
+
     });
 });
