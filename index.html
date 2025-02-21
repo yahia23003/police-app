@@ -9,32 +9,20 @@
 <body>
     <div class="container">
         <h1>شرطة عرب هاوس - تقديم الطلبات</h1>
-        
-        <button id="login-btn">🔹 تسجيل الدخول عبر ديسكورد</button>
-
-        <form id="apply-form">
-            <label>الاسم الثلاثي:</label>
-            <input type="text" id="full-name" required>
-
-            <label>العمر:</label>
-            <input type="number" id="age" required>
-
-            <label>اسمك داخل اللعبة:</label>
-            <input type="text" id="game-user" required>
-
-            <label>هل لديك أي مخالفات سابقة؟</label>
+        <button id="login-discord">🔹 تسجيل الدخول عبر ديسكورد</button>
+        <form id="application-form">
+            <input type="text" id="full-name" placeholder="الاسم الثلاثي" required>
+            <input type="number" id="age" placeholder="العمر" required>
+            <input type="text" id="game-username" placeholder="اسمك داخل اللعبة" required>
             <select id="violations">
                 <option value="لا">لا</option>
                 <option value="نعم">نعم</option>
             </select>
-
-            <label>لماذا ترغب في الانضمام للشرطة؟</label>
-            <textarea id="reason" required></textarea>
-
-            <button type="submit">✔ إرسال الطلب</button>
+            <textarea id="reason" placeholder="لماذا ترغب في الانضمام للشرطة؟" required></textarea>
+            <button type="submit">✔️ إرسال الطلب</button>
         </form>
+        <p id="status-message"></p>
     </div>
-
     <script src="script.js"></script>
 </body>
 </html>
