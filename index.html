@@ -3,62 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>التقديم لشرطة عرب هاوس</title>
+    <title>تقديم شرطة عرب هاوس</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>التقديم لشرطة عرب هاوس</h1>
+        <h1>شرطة عرب هاوس - تقديم الطلبات</h1>
         <button id="discord-login">تسجيل الدخول عبر ديسكورد</button>
     </header>
-    
-    <section>
-        <h2>نموذج التقديم</h2>
-        <form id="application-form">
-            <label for="full-name">الاسم الثلاثي:</label>
-            <input type="text" id="full-name" required>
-            
-            <label for="age">العمر:</label>
-            <input type="number" id="age" required>
-            
-            <label for="game-user">يوزر داخل اللعبة:</label>
-            <input type="text" id="game-user" required>
-            
-            <label for="violations">هل لديك مخالفات سابقة؟</label>
-            <select id="violations">
-                <option value="no">لا</option>
-                <option value="yes">نعم</option>
-            </select>
-            
-            <label for="reason">سبب رغبتك في الانضمام:</label>
-            <textarea id="reason" required></textarea>
-            
-            <label for="experience">مستوى الخبرة:</label>
-            <select id="experience">
-                <option value="beginner">مبتدئ</option>
-                <option value="intermediate">متوسط</option>
-                <option value="expert">خبير</option>
-            </select>
-            
-            <label for="military-laws">هل لديك معرفة بالقوانين العسكرية؟</label>
-            <select id="military-laws">
-                <option value="yes">نعم</option>
-                <option value="no">لا</option>
-            </select>
-            
-            <label for="commitment">هل تستطيع الالتزام بالحضور والتدريبات؟</label>
-            <select id="commitment">
-                <option value="yes">نعم</option>
-                <option value="no">لا</option>
-            </select>
-            
-            <label for="discord-user">يوزر ديسكورد:</label>
-            <input type="text" id="discord-user" required>
-            
-            <button type="submit">إرسال الطلب</button>
-        </form>
-    </section>
-    
+    <main>
+        <section id="application-form" style="display: none;">
+            <h2>نموذج التقديم</h2>
+            <form id="application">
+                <label>الاسم الثلاثي: <input type="text" name="full_name" required></label>
+                <label>العمر: <input type="number" name="age" required></label>
+                <label>يوزر داخل اللعبة: <input type="text" name="game_user" required></label>
+                <label>هل لديك مخالفات سابقة؟
+                    <select name="violations" required>
+                        <option value="لا">لا</option>
+                        <option value="نعم">نعم</option>
+                    </select>
+                </label>
+                <label>سبب رغبتك في الانضمام:
+                    <textarea name="reason" required></textarea>
+                </label>
+                <label>مستوى الخبرة:
+                    <select name="experience" required>
+                        <option value="مبتدئ">مبتدئ</option>
+                        <option value="متوسط">متوسط</option>
+                        <option value="خبير">خبير</option>
+                    </select>
+                </label>
+                <label>هل لديك معرفة بالقوانين العسكرية؟
+                    <select name="military_laws" required>
+                        <option value="نعم">نعم</option>
+                        <option value="لا">لا</option>
+                    </select>
+                </label>
+                <label>هل تستطيع الالتزام بالحضور والتدريبات؟
+                    <select name="commitment" required>
+                        <option value="نعم">نعم</option>
+                        <option value="لا">لا</option>
+                    </select>
+                </label>
+                <label>يوزر ديسكورد: <input type="text" name="discord_user" required></label>
+                <button type="submit">إرسال الطلب</button>
+            </form>
+        </section>
+    </main>
     <script src="script.js"></script>
 </body>
 </html>
