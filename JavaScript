@@ -1,0 +1,61 @@
+// script.js
+document.getElementById('leaveForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const name = document.getElementById('name').value;
+    const startDate = document.getElementById('startDate').value;
+    const endDate = document.getElementById('endDate').value;
+    const leaveType = document.getElementById('leaveType').value;
+
+    const webhookURL = "YOUR_DISCORD_WEBHOOK_URL";
+
+    const message = {
+        content: `طلب إجازة جديد:\n**الاسم**: ${name}\n**تاريخ البدء**: ${startDate}\n**تاريخ الانتهاء**: ${endDate}\n**نوع الإجازة**: ${leaveType}`,
+        embeds: [{
+            type: "rich",
+            title: "طلب إجازة",
+            description: `تفاصيل طلب الإجازة: ${name} يطلب إجازة من ${startDate} إلى ${endDate} لنوع ${leaveType}.`,
+            fields: [{
+                name: "اختيارات",
+                value: "اضغط على الأزرار أدناه للقبول أو الرفض."
+            }],
+            footer: {
+                text: "يرجى اتخاذ الإجراء."
+            }
+        }],
+        components: [{
+            type: 1,
+            components: [
+                {
+                    type: 2,
+                    style: 1,
+                    label: "قبول",
+                    custom_id: "accept_leave"
+                },
+                {
+                    type: 2,
+                    style: 4,
+                    label: "رفض",
+                    custom_id: "reject_leave"
+                }
+            ]
+        }]
+    };
+
+    fetch(webhookURL, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(message)
+    })
+    .then(response => response.json())
+    .then(data => {
+        alert('تم إرسال طلب الإجازة بنجاح!');
+        document.getElementById('leaveForm').reset();
+    })
+    .catch(error => {
+        alert('حدث خطأ أثناء إرسال الطلب!');
+        console.error('Error:', error);
+    });
+});
