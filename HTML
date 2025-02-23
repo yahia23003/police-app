@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>طلب الإجازة - شُرطة عرب هاوس</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>طلب الإجازة</h1>
+        <form id="leaveForm">
+            <div class="input-group">
+                <label for="name">الاسم:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="input-group">
+                <label for="startDate">تاريخ البدء:</label>
+                <input type="date" id="startDate" name="startDate" required>
+            </div>
+            <div class="input-group">
+                <label for="endDate">تاريخ الانتهاء:</label>
+                <input type="date" id="endDate" name="endDate" required>
+            </div>
+            <div class="input-group">
+                <label for="leaveType">نوع الإجازة:</label>
+                <select id="leaveType" name="leaveType" required>
+                    <option value="سنوية">سنوية</option>
+                    <option value="مرضية">مرضية</option>
+                    <option value="طوارئ">طوارئ</option>
+                </select>
+            </div>
+            <button type="submit" class="submit-btn">إرسال الطلب</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

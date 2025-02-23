@@ -1,28 +1,0 @@
-<!DOCTYPE html>
-<html lang="ar">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>شرطة عرب هاوس - تقديم الطلبات</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <div class="container">
-        <h1>شرطة عرب هاوس - تقديم الطلبات</h1>
-        <button id="login-discord">🔹 تسجيل الدخول عبر ديسكورد</button>
-        <form id="application-form">
-            <input type="text" id="full-name" placeholder="الاسم الثلاثي" required>
-            <input type="number" id="age" placeholder="العمر" required>
-            <input type="text" id="game-username" placeholder="اسمك داخل اللعبة" required>
-            <select id="violations">
-                <option value="لا">لا</option>
-                <option value="نعم">نعم</option>
-            </select>
-            <textarea id="reason" placeholder="لماذا ترغب في الانضمام للشرطة؟" required></textarea>
-            <button type="submit">✔️ إرسال الطلب</button>
-        </form>
-        <p id="status-message"></p>
-    </div>
-    <script src="script.js"></script>
-</body>
-</html>
